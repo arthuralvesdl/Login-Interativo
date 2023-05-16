@@ -1,0 +1,198 @@
+* {
+    font-family: Bahnschrift SemiBold;
+}
+
+body {
+    background-color: #002236;
+}
+
+.componente {
+    width: 400px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #18A4F5;
+    border-radius: 20px;
+}
+
+.cabeca,
+.olho,
+.nariz,
+.boca,
+.pupila,
+.cabelo,
+.franja,
+.lagrima {
+    position: absolute;
+}
+
+.cabeca {
+    top: 5%;
+    width: 95px;
+    height: 100px;
+    border-radius: 100px 100px 100px 100px;
+    background: linear-gradient(90deg, #ffecdd 10%, #ffd4b1 100%);
+    transition: 0.5s;
+}
+
+.olho {
+    z-index: 99;
+    top: var(--topOlho, 35px);
+    left: 20px;
+    width: 20px;
+    height: var(--Holho, 20px);
+    background-color: #fff;
+    border-radius: 100px 100px 100px 100px;
+    transition: 0.2s;
+
+    &:before {
+        transition: 0.2s;
+        position: absolute;
+        content: '';
+        left: 35px;
+        width: 20px;
+        height: var(--HbeforeOlho, 20px);
+        background-color: #fff;
+        border-radius: 100%;
+    }
+}
+
+.pupila {
+    top: var(--topPupila, 5px);
+    left: var(--leftPupila, 5px);
+    width: 10px;
+    height: var(--Hpupila, 10px);
+    background-color: #000;
+    border-radius: 100%;
+    transition: 0.2s;
+
+    &:before {
+        transition: 0.2s;
+        position: absolute;
+        content: '';
+        left: var(--beforeLeftPupila, 35px);
+        top: var(--beforeTopPupila, 0px);
+        width: 10px;
+        height: var(--HbeforePupila, 10px);
+        background-color: #000;
+        border-radius: 100%;
+    }
+}
+
+.nariz {
+    border-left: 2px solid #ffd0a9;
+    border-bottom: 2px solid #ffd0a9;
+    border-radius: 0 0 100px 100px;
+    width: 5px;
+    height: 10px;
+    top: 50px;
+    left: 45px;
+}
+
+.boca {
+    top: 68px;
+    left: 33px;
+    width: var(--bocaW, 30px);
+    height: var(--bocaH, 15px);
+    border-radius: var(--bocaRadius, 10px 10px 100px 100px);
+    background: #ffcca2;
+    overflow: hidden;
+    transition: 0.2s;
+
+    &:before {
+        content: '';
+        width: 30px;
+        height: 15px;
+        position: absolute;
+        top: 8px;
+        background-color: rgba(255, 0, 0, 0.205);
+        border-radius: 100%;
+        overflow: hidden;
+    }
+}
+
+.cabelo {
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    width: 95px;
+    height: 50px;
+    background: #000;
+    border-radius: 10px 45px 5px 5px;
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: 21px;
+        left: 5px;
+        width: 85px;
+        height: 35px;
+        background: linear-gradient(90deg, #ffecdd 10%, #ffd4b1 100%);
+        border-radius: 20px 20px 0 0;
+    }
+}
+
+input {
+    background-color: #002236;
+    color: #ebebeb;
+    border: none;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 220px;
+    margin: 0;
+    font-size: 12pt;
+}
+
+input:focus {
+    background-color: #023c5e;
+    border: none;
+    outline: none;
+}
+
+.invisivel {
+    display: none;
+}
+
+.visivel,
+.invisivel {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 150px;
+    top: -30px;
+    font-size: 14pt;
+    /* color: #fff; */
+}
+
+.enviar {
+    background-color: #006aa8e1;
+    color: #ebebeb;
+    font-size: 12pt;
+    border: none;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 5px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.1s;
+    margin-top: 20px;
+}
+
+.enviar:hover {
+    /* background-color: #002236; */
+    background-color: #006BA8;
+    /* color: #002236; */
+    width: 130px;
+}
